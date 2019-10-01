@@ -12,3 +12,5 @@ function criarPessoa() {
         sobrenome: 'Silva'
     }
 }
+
+console.log(criarPessoa())
