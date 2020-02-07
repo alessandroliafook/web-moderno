@@ -8,6 +8,8 @@ const menorSalario = (funcEscolhido, func) => funcEscolhido.salario < func.salar
 axios.get(url).then(response => {
 
     const funcionarios = response.data
+    // console.log(funcionarios)
+
     let desafio = funcionarios
                     .filter(ehMulher)
                     .filter(ehChines)

@@ -19,6 +19,7 @@ fs.readFile(caminho, 'utf-8', (err, conteudo) => {
 const config = require('./arquivo.json')
 console.log(config.db)
 
+//leitura de diretório com os arquivos presentes no diretório
 fs.readdir(__dirname, (err, arquivos) => {
     if(err === null) {
         console.log('Conteúdo da pasta...')
