@@ -1,9 +1,10 @@
 <h1>Projeto</h1>
 <ul class="tree">
-    <li>backend
+    <li>
+        <span wm-folder>backend</span> 
         <ul>
             <li>
-                app
+                <span wm-folder>app</span> 
                 <ul>
                     <li>produto.js</li>
                     <li>usuario.js</li>
@@ -11,7 +12,7 @@
                 </ul>
             </li>
             <li>
-                config
+                <span wm-folder>config</span> 
                 <ul>
                     <li>banco.js</li>
                     <li>rotas.js</li>
@@ -21,10 +22,10 @@
         </ul>
     </li>
     <li>
-        frontend
+        <span wm-folder>frontend</span> 
         <ul>
             <li>
-                public
+                <span wm-folder>public</span> 
                 <ul>
                     <li>app.css</li>
                     <li>app.js</li>
@@ -36,6 +37,16 @@
 </ul>
 
 <link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
-<style>
-    /* resolver desafio */
-</style>
+<script>
+
+    document.querySelectorAll('[wm-folder]').forEach(folder => {
+        folder.onclick = function(e) {
+
+            var ul = folder.nextElementSibling // pega o próximo elemento html
+            var d = ul.style.display
+            ul.style.display = d === 'none' ? 'block' : 'none'
+        }
+    })
+
+
+</script>
