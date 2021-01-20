@@ -6,7 +6,32 @@
     <title>Flexbox #03</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        .flex-container div {
+            box-sizing: border-box;
+        }
+
+        .flex-container {
+            display: flex;
+        }
+
+        .flex-container div {
+            /* forma oficial de definir o tamanho do elemento
+            considerando a direção do main axis, se sobreponto 
+            ao atributo padrão quando for o caso */
+            flex-basis: 100px;
+            width: 200px; /* vai perder */
+        }
+
+        .flex-container div:nth-child(4) {
+            /* grow shrink basis */
+            flex: 3 6 100px;
+        }
+
+        .flex-container {
+            width: 300px;
+            width: 600px;
+        }
+
     </style>
 </head>
 

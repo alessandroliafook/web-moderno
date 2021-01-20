@@ -6,7 +6,59 @@
     <title>Flexbox #02</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        .flex-container {
+            display: flex;
+            height: 300px;
+            width: 600px;
+        }
+
+        .flex-container div:nth-child(3) {
+            background-color: indianred;
+            /* atributo representa o peso do elemento 
+            para efeito de ordenação */
+            order: 1;
+            /* o valor padrão é 0 para todos os elementos */
+            order: 0;
+            order: -1;
+
+            /* Modificar o alinhamento do elemento referenciado */
+            align-self: center;
+            align-self: flex-end;
+            align-self: flex-start;
+            /* padrão */
+            align-self: stretch;
+        }
+
+        .flex-container div {
+            width: 100px;
+
+            /* valor padrão do crescimento */
+            flex-grow: 0;
+
+            /* todos os elementos crescem de forma proporcional
+            para ocupar todo o espaço disponível no elemento pai */
+            flex-grow: 1;
+        }
+
+        .flex-container div:nth-child(1) {
+            /* Caso o peso de crescimento seja definido de forma 
+            individual, o elemento vai receber uma porção proporcional
+            ao peso do total de espaço não ocupado quando considerado 
+            os elementos em seu tamanho padrão */
+            flex-grow: 2;
+        }
+
+        .flex-container {
+            width: 300px;
+            /* Define a proporção em que os itens irão reduzir seu tamanho
+            para adequar o espaço disponível, caso seja menor que o necessário */
+            flex-shrink: 1;
+        }
+
+        .flex-container div:nth-child(1) {
+            flex-shrink: 5;
+        }
+
     </style>
 </head>
 

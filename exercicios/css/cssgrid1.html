@@ -22,6 +22,61 @@
             border: solid 5px dodgerblue;
             background: #fff;
         }
+
+        body {
+            display: grid;
+
+            /* atributo para controle do tamanho das colunas */
+            grid-template-columns: 50% 50%;
+            grid-template-columns: repeat(5, 8.33% 8.33% 8.33%);
+            grid-template-columns: repeat(12, 8.33%);
+            grid-template-columns: repeat(11, 100px) 100px;
+            /* minmax(100px 300px) */ /* função para controlar um tamanho fluido das colunas*/
+            /* A unidade fr faz o calculo do espaço restante e divide na proporção do
+            total de fr definidos, sendo responsivo ao tamanho da tela */
+            grid-template-columns: 200px 20% 1fr;
+            grid-template-columns: 3fr 6fr 3fr;
+
+            /* atributo para controle do tamanho das linhas */
+            grid-template-rows: 50% 25% 12.5% 12.5%;
+            /* caso não seja definido valor para todas as linhas,
+            as indefinidas serão ajustadas para o tamanho do conteúdo */
+            grid-template-rows: 100px 1fr;
+
+            /* o valor auto irá dividir por igual o espaço disponível
+            entre as linhas que não tem definição */
+            grid-template-rows: 100px auto;
+        }
+
+        .d8 {
+            /* propriedade que define a largura em termos dos 
+            limites de início e fim de um elemento dentro do 
+            grid considerando as linhas da coluna como parâmetro */
+            grid-column-start: 2;
+            grid-column-end: 4;
+
+            /* outra forma de controlar o tamanho da coluna, que 
+            considera o número de saltos que vão ser realizados */
+            grid-column-end: span 2;
+
+            /* propriedade para realizar o controle da altura do elemento
+            considerando sua relação com as linhas do grid */
+            grid-row-start: 3;
+            grid-row-end: 5;
+        }
+        .d10, .d11 {
+            /* podem se sobrepor */
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 5;
+        }
+
+        .d10 {
+            /* indica a profundidade dos elementos
+            quem tem maior valor fica a frente em caso
+            de sobreposição */
+            z-index: 10;
+        }
     </style>
 </head>
 

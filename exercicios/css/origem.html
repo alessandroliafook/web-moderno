@@ -4,12 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Origem CSS: Externo, Interno e Inline</title>
+    <!-- A preferência é sempre pela ordem, quem vem depois tem prioridade -->
     <style>
-        /* ... */
+        body {
+            background-color: aquamarine;
+        }
     </style>
+    <!-- <link rel="stylesheet" href="css/externo.css"> -->
 </head>
 
-<body>
+<!-- A definição inline tem prioridade sobre as demais -->
+<body style="background-color: coral;">
     <h1>E agora?</h1>
 </body>
 

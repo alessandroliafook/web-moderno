@@ -7,10 +7,41 @@
     <style>
         /* 
             https://www.w3schools.com/colors/colors_hsl.asp
+            H - Seleciona a cor
+            S - seleciona a vivacidade da cor 
+            L - Seleciona a claridade da cor 
             
-            https://coolors.co/
-            http://paletton.com/
+            https://coolors.co/ - Selecionar a paleta de cores
+            http://paletton.com/ - Sugestões de design utilizando o material
         */
+
+        body {
+            background-color: green; /* Utilizar o nome */
+            /* Hexadecimal, 
+            - é case insensitive 
+            - segue o padrão RGB
+            - cada par de letras indica um dos campos*/
+            background-color: #f67809;
+            /* Caso os pares sejam iguais, é possível reduzir o número de letras */ 
+            background-color: #abc;
+            /*É possível adicionar transparência utilizando dois caracteres 
+            adicionais no final da definição com 6 campos*/
+            background-color: #edc91280;
+            /*Também é possível adicionar transparência 
+            utilizando o padrão de um caractere para cada campo*/
+            background-color: #e929;
+            /* É possível utilizar a função rgb
+            porém a base deve ser decimal com valores
+            entre 0 - 255 */
+            background-color: rgb(55, 110, 220);
+            /* A função rgba considera a transparência
+            que varia entre 0 - 1 */
+            background-color: rgba(55, 110, 220, .5);
+            /*HUE 0 - 355, SATURATION, LIGHTNESS*/
+            background-color: hsl(299, 58%, 50%);
+            background-color: hsla(299, 58%, 50%, .5);
+
+        }
     </style>
 </head>
 

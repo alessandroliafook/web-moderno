@@ -5,7 +5,34 @@
     <meta charset="UTF-8">
     <title>Unidades #01</title>
     <style>
-        /* ... */
+
+        .unidades-absolutas {
+            position: absolute; /* Posicionar de forma absoluta na tela */
+            font-size: 40px;
+            padding: 20px;
+            border: solid 5px #222;
+            margin: 20px;
+            width: 4cm; /* pouco usado */
+            height: 20mm; /* pouco usado */
+            /* Os atributos top e left
+            Só tem efeito pois a posição é absoluta*/
+            top: 150px;
+            left: 200px;
+        }
+
+        .unidades-relativas {
+
+            position: absolute;
+            font-size: 4em; /* Relativo a fonte do elemento pai*/
+            padding: 5%;
+            border: solid 1vw #222;
+            margin: .8%;
+            width: 20vw; /* Valor percentual relativo ao tamanho atual da largura do navegador */
+            height: 15vh; /* Valor percentual relativo ao tamanho atual da altura do navegador */
+            bottom: 5%;
+            right: 5%;
+        }
+
     </style>
 </head>
 

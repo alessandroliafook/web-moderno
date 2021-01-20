@@ -6,7 +6,56 @@
     <title>Flexbox #01</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        .big {
+            font-size: 1.5em;
+        }
+
+        .flex-container {
+            /* Transforma uma div em um flex-container */
+            display: flex;
+            flex-direction: column;
+            /* Inverte os elementos  */
+            flex-direction: column-reverse;
+            flex-direction: row-reverse;
+            /* Propriedade padrão */
+            flex-direction: row;
+            /* Reduzir a largura pode ocasionar overflow */
+            width: 50%;
+            /* Permite a quebra de linha para evitar o overflow */
+            flex-wrap: wrap;
+            flex-wrap: wrap-reverse;
+            /* É possível definir os dois comportamentos 
+            em um único atributo */
+            flex-flow: column-reverse wrap;
+            height: 200px;
+            flex-flow: row wrap;
+
+            /* Define a forma de justificar os elementos */
+            justify-content: flex-start;
+            justify-content: flex-end;
+            justify-content: center;
+            justify-content: space-around;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+
+            /* Cross Axis */
+            height: 400px;
+            /* alinhamento padrão */
+            align-items: stretch;
+
+            /* alinha os itens considerando a base do conteúdo */
+            align-items: baseline;
+            align-items: flex-start;
+            align-items: flex-end;
+            align-items: center;
+
+            /* mais de uma linha */
+            align-content: flex-start;
+            align-content: flex-end;
+            align-content: center;
+            align-content: space-around;
+            align-content: space-between;            
+        }
     </style>
 </head>
 

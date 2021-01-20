@@ -5,7 +5,50 @@
     <meta charset="UTF-8">
     <title>Display</title>
     <style>
-        /* ... */
+        body {
+            font-size: 40px;
+            color: #fff;
+            background-color: coral;
+        }
+
+        ul {
+            padding: 0px;
+        }
+        div { background-color: seagreen;}
+        span { background-color: dodgerblue;}
+        li {background-color: purple;}
+
+        div, span, li { 
+            /* width e heigth não afetaram o componente span*/
+            width: 50%;
+            width: 200px;
+            height: 80px;
+
+            padding-top: 30px;
+            padding-left: 30px;
+            text-align: center;
+            /* 
+                O componente passa ocupar uma linha individual,
+                com isso os comportamentos de width e heigth
+                passam a ter efeito sobre o span
+            */
+            display: block;
+
+            /*
+                Os elementos passam a compartilhar a linha,
+                deixando de ser afetados pelas propriedades width e heigth.
+                Considerando que o ul é um elemento display block
+                ele irá realizar a quebra de linha.
+            */
+            display: inline;
+
+            /* 
+                Com o valor abaixo, os elementos são inseridos na mesma linha
+                e consideram o comportamento definido nas propriedades
+                width e heigth
+             */
+             display: inline-block;
+        }
     </style>
 </head>
 

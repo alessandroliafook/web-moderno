@@ -11,18 +11,37 @@
 
         .c1 {
             background-color: red;
+            /* A propriedade é aplicada neste elemento
+            e todos os demais são remanejados desconsiderando
+            o elemento com a propriedade */
+            float: right;
         }
 
         .c2 {
             background-color: green;
+            /* Essa propriedade irá fazer com que este elemento
+            leve em consideração a propriedade float de seus 
+            antecessores */
+            clear: right;
+            float: left;
+
         }
         
         .c3 {
             background-color: blue;
+            clear: both;
         }
 
         .c4 {
             background-color: orange;
+            float: right;
+        }
+        div {
+            height: 150px;
+            width: 150px;
+            /* A propriedade é aplicada na ordem dos elementos 
+            contidos na div*/
+            /* float: left; */
         }
     </style>
 </head>

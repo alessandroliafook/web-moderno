@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 
 <head>
@@ -19,6 +19,45 @@
             font-size: 30px;
             border: solid 5px dodgerblue;
             background: #fff;
+        }
+
+        body {
+            display: grid;
+            /* é possível nomear as linhas que irão representar
+            as colunas do grid, inclusive utilizando múltiplos nomes */
+            grid-template-columns: 
+            [inicio] 1fr 
+            [metade-1 meio-1] 1fr 
+            [metade-2 meio-2] 1fr [fim];
+            grid-template-rows: repeat(3, 1fr);
+
+            /* propriedade para criar um espaço não ocupado
+            entre as linhas ou colunas do grip de acordo com
+            o nome utilizado */
+            column-gap: 20px;
+            row-gap: 20px;
+
+            /* o comportamento das duas propriedades anteriores
+            pode ser realizada com a propriedade abaixo */
+            /* row-gap column-gap */
+            gap: 50px 10px;
+
+            /* para aplicar o mesmo valor nas duas dimensões
+            basta colocar um valor único */
+            gap: 10px;
+        }
+
+        .d1 {
+            grid-column-start: metade-2;
+            grid-column-end: fim;
+            
+            /* o caractere é necessário para separar a marcação de início
+            e fim da coluna no grid */
+            grid-column: meio-1 / fim;
+            grid-row: 1 / span 2;
+
+            /* row-start column-start row-end column-end */
+            grid-area: 1 / meio-1 / span 3 / fim;
         }
     </style>
 </head>

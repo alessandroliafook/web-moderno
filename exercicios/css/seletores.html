@@ -6,7 +6,95 @@
     <title>CSS Selectors</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        /* Seleciona todos os elementos da página */
+        /* * {
+            color: #ff0;
+            background-color: #f77;
+        } */
+        /* Seleciona os elementos com a classe tag da página */
+        /* .tag {
+            color: #ff0;
+            background-color: #f77;
+        } */
+        /* Seleciona o elemento com o id da página */
+        /* #aprovados {
+            color: #ff0;
+            background-color: #f77;
+        } */
+        /* Seleciona os elementos diretamente aninhados no elemento com id da página */
+        /* #aninhado > div {
+            color: #ff0;
+            background-color: #f77;
+        } */
+        /* Seleciona os elementos descendentes do elemento com id da página */
+        /* #aninhado div {
+            color: #ff0;
+            background-color: #f77;
+        } */
+        /* Seleciona o elemento da página representado pelo que está a direita do operador
+        e seja antecedido e adjacente ao elemento à esquerda do operador */
+        /* p + ul {
+            color: #ff0;
+            background-color: #f77;
+        } */
+        /* Seleciona o elemento da página representado pelo que está a direita do operador,
+        caso o elemento que esteja à esquerda do operador compartilha o mesmo pai*/
+        /* p ~ ul {
+            color: #ff0;
+            background-color: #f77;
+        } */
+        /* Seleciona os elementos que tenham a propriedade contida nos colchetes */
+        /* [feira] {
+            color: #ff0;
+            background-color: #f77;
+        } */
+        /* Seleciona os elementos que tenham a propriedade com o respectivo valor contido nos colchetes */
+        /* [feira=casa] {
+            color: #ff0;
+            background-color: #f77;
+        } */
+        /* Seleciona os elementos que tenham a propriedade com o respectivo valor contenha a substring 
+        separada por espaço escrita após a igualdade*/
+        /* [feira~=casa] {
+            color: #ff0;
+            background-color: #f77;
+        } */
+       /* Seleciona os elementos que tenham a propriedade com o respectivo valor contenha a substring 
+        em qualquer lugar escrita após a igualdade*/
+        /* [feira*=casa] {
+            color: #ff0;
+            background-color: #f77;
+        } */
+       /* Seleciona os elementos que sejam o filho, com número n passado por parâmetro
+       e do tipo descrito antes dos dois pontos, de algum outro elemento*/
+        /* span:nth-child(2) {
+            color: #ff0;
+            background-color: #f77;
+        } */
+       /* Seleciona os elementos que sejam o filho com número n passado por parâmetro
+       cujo pai seja do tipo do elemento anterior aos dois pontos*/
+        /* section > :nth-child(odd) {
+            color: #ff0;
+            background-color: #f77;
+        } */
+        /* Seleciona os elementos dos tipos separados por vírgula, funciona como um "ou" */
+        /* p, ul {
+            color: #ff0;
+            background-color: #f77;
+        } */
+        /* Seleciona os elementos do tipo a direita do espaço que sejam descendentes do 
+        tipo a esquerda do espaço */
+        /* p ul {
+            color: #ff0;
+            background-color: #f77;
+        } */
+        /* Seleciona o filho de número n infomado no parâmtro da função, 
+        cujo pai seja o informado antes do caractere ">" 
+        e o tipo corresponda ao escrito antes dos dois pontos*/
+            /* section > span:nth-of-type(2) {
+            color: #ff0;
+            background-color: #f77;
+        } */
     </style>
 </head>
 

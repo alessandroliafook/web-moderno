@@ -9,6 +9,17 @@
             height: 100px;
             width: 260px;
             border: solid 3px;
+            /* Esconde tudo que ultrapassar o tamanho do elemento */
+            /* overflow: hidden; */
+
+            /* Permite o scroll nos eixos x e y para 
+            consultar a informação que ultrapassa os limites */
+            /* overflow: scroll; */
+
+            /* É possível definir comportamento para cada eixo,
+            caso tenha apenas um deles, irá ser aplicado a ambos */
+            overflow-x: scroll;
+            overflow-y: hidden;
         }
     </style>
 </head>

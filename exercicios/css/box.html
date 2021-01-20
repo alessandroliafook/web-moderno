@@ -5,7 +5,27 @@
     <meta charset="UTF-8">
     <title>Box Model</title>
     <style>
-        /* ... */
+        body {
+            font-size: 80px;
+        }
+        .c1 {
+            background-color: orange;
+        }
+        .c2 {
+            background-color: skyblue;
+        }
+        .c3 { 
+            background-color: tomato;
+        }
+        div {
+            float: left;
+            padding-top: 100px;
+            padding: 10px 50px 100px 150px; /* Aplica para os 4 lados no sentido horário e começando pelo top*/
+            padding: 100px 50px; /* Aplica seguindo a sequência vertical e depois horizontal*/
+            padding: 50px; /* Aplica para todos os lados*/
+            margin: 0px 20px; /* Aplica na sequencia vertical e depois horizontal */
+            border: solid 15px black;
+        }
     </style>
 </head>
 

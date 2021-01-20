@@ -3,14 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <title>Herança</title>
+    <!-- https://fonts.google.com/ -->
     <style>
-        /* ... */
+        body{
+            font-family: 'Oswald', sans-serif;
+            font-size: 40px;
+            border: solid 3px red; /* não transmite por herança*/
+            padding: 50px; /*não transmite por herança*/
+        }
+        div {
+            /* algumas propriedades que não são herdadas automaticamente podem ser herdadas de forma explícita*/
+            border: inherit; 
+        }
     </style>
 </head>
 
 <body>
-    <h1>Herança</h1>
+    <h1 style="background-color: green;">Herança</h1>
     <div>Estou herdando</div>
 </body>
 

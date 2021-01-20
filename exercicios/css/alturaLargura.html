@@ -5,9 +5,19 @@
     <meta charset="UTF-8">
     <title>Altura e Largura</title>
     <style>
+        html {
+            height: 100%;
+        }
         body {
             font-size: 40px;
             background-color: coral;
+            /* 
+                A altura com valor absoluto já impacta
+                no cálculo de altura relativa dos elementos
+                que estejam diretamente abaixo.
+             */
+            height: 200px;
+            height: 100%;
         }
 
         div {
@@ -16,6 +26,25 @@
 
         span {
             background-color: dodgerblue;
+        }
+        div, span {
+            /* 
+                Por padrão o body ocupa toda a largura
+                mas não ocupa toda a altura, sendo assim,
+                se o body não tiver uma definição de altura
+                absoluta, então o atributo de altura relativa 
+                dos elementos internos não irá causar nenhuma
+                mudança.
+                Para que a altura relativa seja considerada
+                os elementos ascendentes devem ter um valor para
+                a altura definidos expressamente, causando impacto
+                no seu tamanho e por consequência afetando o valor
+                relativo sobre o qual a altura irá ser calculada.
+             */
+            width: 50%;
+            height: 250px;
+            height: 50%;
+            display: block;
         }
     </style>
 </head>
