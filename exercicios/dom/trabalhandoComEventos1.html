@@ -9,9 +9,37 @@
 
 <body class="conteudo exercicio">
     <div>
-        <a href="https://google.com.br">Google</a>
+        <!-- No contexto do navegador a variável que indica o evento 
+            atual chama-se 'event'-->
+        <!-- <a href="https://google.com.br"
+        onclick="navegarEm5s(event)">Google</a> -->
+
+        <a espera-um-pouco href="https://google.com.br">Google</a>
+
     </div>
     <script>
-        // ...
+       
+        function navegarEm5s(e) {
+            // irá impedir que o comportamento padrão ocorra
+            e.preventDefault()
+
+            console.log('Saindo em 5s....')
+            setTimeout(() => {
+
+                /* Objeto html que foi alvo do evento */
+                const link = e.target
+
+                /* o lado esquerdo da igualdade representa 
+                a barra de endereço do navegador*/
+                window.location.href = link.href
+            }, 5000)
+        }
+
+        // Solução limpa, porém sem nenhuma referência no navegador
+        // const a = document.querySelector('a')
+        // a.onclick = navegarEm5s
+
+        const a = document.querySelector('[espera-um-pouco]')
+        a.onclick = navegarEm5s
     </script>
 </body>

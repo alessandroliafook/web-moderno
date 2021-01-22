@@ -10,6 +10,24 @@
 <body class="conteudo exercicio">
     <div>Elemento</div>
     <script>
-        // ...
+        const item = document.querySelector('div')
+
+        item.style.position = 'absolute'
+
+        // Função para realizar o click and move de uma div
+        item.onmousemove = e => {
+            
+            const target = e.target
+
+            target.style.cursor = 'move'
+
+            if(e.buttons) {
+                target.style.top = `${e.clientY - (target.clientHeight / 2)}px`
+                target.style.left = `${e.clientX - (target.clientWidth / 2)}px`
+            }
+
+
+        }
+
     </script>
 </body>

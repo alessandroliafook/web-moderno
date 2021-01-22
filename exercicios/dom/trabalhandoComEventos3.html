@@ -38,14 +38,47 @@
 
 <body>
     <div class="esquerda" wm-dropzone>
-        <div class="item">1</div>
-        <div class="item">2</div>
-        <div class="item">3</div>
-        <div class="item">4</div>
+        <div class="item"wm-dropitem>1</div>
+        <div class="item"wm-dropitem>2</div>
+        <div class="item"wm-dropitem>3</div>
+        <div class="item"wm-dropitem>4</div>
     </div>
     <div class="direita" wm-dropzone></div>
     <script>
-        // ...
+        const items = document.querySelectorAll('[wm-dropitem]')
+
+        /* Função para tornar os itens aptos ao movimento de caixa */
+        items.forEach((item, index) => {
+            item.draggable = true
+
+            item.id = item.id || `draggable-item-${index}`
+
+            /* Função para capturar o evento de início do drag e 
+            armazenar o id do item que está sendo movido */
+            item.ondragstart = e => {
+                e.dataTransfer.setData('item-id', e.target.id)
+            }
+        });
+
+        const dropzones = document.querySelectorAll('[wm-dropzone]')
+        /* Função para realizar o tratamento dos eventos de mover e soltar */
+        dropzones.forEach(dropzone => {
+            /* interrompe o evento padrão de fim do arrastar */
+            dropzone.ondragover = e => e.preventDefault()
+
+            /* trata o evento de soltar o item */
+            dropzone.ondrop = function(e) {
+                const id = e.dataTransfer.getData('item-id')
+                const item = document.getElementById(id)
+                
+                /* Na primeira forma de resolver é possível que os 
+                itens sejam colocados em elementos que não são 
+                classificados como dropzone*/
+                // e.target.appendChild(item)
+                
+                dropzone.appendChild(item)
+            }
+        })
     </script>
 </body>
 

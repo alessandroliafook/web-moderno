@@ -12,10 +12,50 @@
         <a href='https://www.cod3r.com.br'>Cod3r</a>
     </div>
     <div id='primeiro'>
-        <img src='http://files.cod3r.com.br/curso-web/logo-estreita.png' alt='logo'>
+        <img src='http://files.cod3r.com.br/curso-web/logo-estreita.png' alt='logo' tst='teste'>
     </div>
     <script>
-        // ...
+        const img = document.querySelector('img')
+
+        /* A função que foi passada no console.log
+        retorna inclusive atributos personalizados*/
+        console.log('getAttribute', img.getAttribute('src'))
+        
+        /* Outra forma de acessar os atributos porém não
+        realiza o acesso de atributos personalizados */
+        console.log('src', img.src)
+        console.log('src', img['src'])
+        console.log('alt', img['alt'])
+
+        /* Meta informações de um elemento*/
+        console.log('Elemento "img"..............................')
+        console.log('NodeType', img.nodeType)
+        console.log('NodeName', img.nodeName)
+
+        /* Recupera o atributo, mesmo que seja personalizado
+        com informações adicionais */
+        const src = img.getAttributeNode('src')
+        const tst = img.getAttributeNode('tst')
+        console.log(src, tst)
+        console.log('Atributo "src"...........................')
+        console.log('NodeType', src.nodeType)
+        console.log('NodeName', src.nodeName)
+        console.log('NodeValue', src.nodeValue)
+        
+        console.log('Atributo Personalizado "tst"............')
+        console.log('NodeType', tst.nodeType)
+        console.log('NodeName', tst.nodeName)
+        console.log('NodeValue', tst.nodeValue)
+
+        const link = document.querySelector('a')
+        console.log('Elemento "a"...........................')
+        console.log('href', link.href)
+        console.log('firstChild.nodeType', link.firstChild.nodeType)
+        console.log('firstChild.nodeValue', link.firstChild.nodeValue)
+        link.firstChild.nodeValue = 'Novo Texto'
+        // Outra forma de alterar o conteúdo
+        // link.innerHTML = 'Novo Texto 2'
+
     </script>
 </body>
 

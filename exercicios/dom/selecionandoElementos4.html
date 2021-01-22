@@ -22,7 +22,49 @@
         <p>Fim</p>
     </div>
     <script>
-        // ...
+        function log() {
+            console.log(this)
+        }
+
+        /* Adicionando a função de log aos protótipos*/
+        HTMLCollection.prototype.log = log
+        HTMLElement.prototype.log = log
+        NodeList.prototype.log = log
+        Node.prototype.log = log
+
+        const lista = document.querySelector('div ul')
+        /* Navegando pelos nós da árvore como NodeList*/
+        lista.parentNode.log()
+        lista.childNodes.log()
+
+        const primeiro = lista.firstChild
+        primeiro.log()
+
+        const segundo = primeiro.nextSibling
+        segundo.log()
+
+        const ultimo = lista.lastChild
+        ultimo.log()
+
+        const penultimo = ultimo.previousSibling
+        penultimo.log()
+
+        /* Navegando pelos nós como HTMLElement */
+        lista.children.log()
+
+        const primeiroElemento = lista.firstElementChild
+        primeiroElemento.log()
+        primeiroElemento.nextElementSibling.log()
+        lista.lastElementChild.log()
+
+        /* É possível navegar pelos dois tipos de elemento 
+        como um nó de árvore*/
+        lista.parentElement.previousElementSibling.log()
+        lista.parentNode.previousElementSibling.log()
+        lista.parentNode.nextElementSibling.log()
+
+        document.querySelectorAll('div ul li').log()
+        
     </script>
 </body>
 

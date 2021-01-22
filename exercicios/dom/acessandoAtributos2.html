@@ -17,7 +17,39 @@
         </ul>
     </div>
     <script>
-        // ...
+        const lista = document.querySelector('div ul[destino="escritório"]')
+        console.log('Elemento "ul"..............................')
+        console.log('childNodes', lista.childNodes)
+
+        /* Não é possível acessar atributo personalizado diretamente*/
+        console.log('destino', lista.destino)
+        console.log('getAttribute', lista.getAttribute('destino'))
+        console.log('hasAttribute', lista.hasAttribute('destino'))
+        lista.setAttribute('destino', 'empresa')
+        console.log('getAttribute', lista.getAttribute('destino'))
+        console.log('getAttribute', lista.getAttribute('status'))
+        lista.setAttribute('status', 'aberto')
+        console.log('getAttribute', lista.getAttribute('status'))
+        
+        /* Os atributos personalizados que tem o padrão de nomenclatura
+        data-* são tratados de forma diferente dos demais*/
+        console.log('dataset', lista.dataset)
+        lista.setAttribute('data-status', 'aberto')
+        console.log('dataset', lista.dataset)
+        console.log('urgencia', lista.dataset.urgencia)
+        console.log('status', lista.dataset.status)
+        
+        /*possível alterar o valor */
+        lista.dataset.urgencia = 4
+        console.log('urgencia', lista.dataset.urgencia)
+
+        /* Cuidado com palavras reservadas da linguagem */
+        const label = document.querySelector('label')
+        console.log('for', label.for)
+        console.log('htmlFor', label.htmlFor)
+        console.log('getAttribute for', label.getAttribute('for'))
+        console.log('getAttribute htmlFor', label.getAttribute('htmlFor'))
+
     </script>
 </body>
 
