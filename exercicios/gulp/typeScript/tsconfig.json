@@ -1,0 +1,12 @@
+{
+    "files": [
+        "src/**/*.ts"
+    ],
+    "compilerOptions": {
+        "rootDir": "src",
+        /* Indica a obrigação de colocar o tipo any, nas variáveis
+            que não tenham tipo definido*/
+        "noImplicitAny": true,
+        "target": "es5"
+    }
+}
