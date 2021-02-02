@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Modificando HTML #02</h1>
+    <div id='div1'>1</div>
+    <div id='div2'>2</div>
+    <div id='div3'>3</div>
+    <p class='numero'>4</p>
+    <p class='numero'>5</p>
+
+    <script>
+        $('#div1').append(', 2')
+        $('#div1').prepend('0, ')
+        $('<span>, 3</span>').appendTo('#div1')
+        $('<span>-1, </span>').prependTo('#div1')
+
+        $('#div2').before('<p>Antes 2</p>')
+        $('#div2').after('<p>Depois 2</p>')
+        
+        $('<p>Antes 3</p>').insertBefore('#div3')
+        $('<p>Depois 3</p>').insertAfter('#div3')
+
+
+        /* envolve os elementos selecionados pelo elemento
+        descrito no parâmetro de forma individual */
+        // $('p.numero').wrap('<div>')
+            
+        /* envolve todos os elementos selecionados com 
+        o elemento passado no parâmetro*/
+        $('p.numero').wrapAll('<div id="div4">')
+        $('#div4').empty()
+
+        $('#div3, #div4').prev().remove()
+
+        /* Os dois exemplos tem o mesmo efeito */
+        // $('<div>Substituto</div>').replaceAll('body > p')
+        // $('body > p').replaceWith('<div>Substituto</div>')
+        /* É possível passar uma função como parâmetro*/
+        $('body > p').replaceWith(function() {
+            /* Insere o conteúdo do parágrafo na div, 
+            e não o parágrafo inteiro, que é o comportamento
+            esperado da função wrap()*/
+            return $('<div>').html($(this).html())
+        })
+
+        
+        
+    </script>
+</body>
